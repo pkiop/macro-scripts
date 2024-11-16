@@ -1,0 +1,37 @@
+{
+  "name": "macro-core",
+  "productName": "macro",
+  "version": "1.0.7",
+  "description": "logic",
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "webpack && mv dist/*.js ../macro-server/files"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.0.12",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "keywords": [],
+  "author": {
+    "name": "pkiop",
+    "email": "pkiopb@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "proxy-chain": "^2.5.3",
+    "puppeteer-core": "22.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "utf-8-validate": "^5",
+    "winston": "^3.15.0"
+  }
+}
