@@ -83,6 +83,15 @@ const NaverMacroUtil = {
         )
         .click();
     },
+    clickShoppingTargetItem: async (page: Page, mid: string) => {
+      const targetSelector = `a[data-i="${mid}"]:not([class^="ad"]):not([class^="thumb"])[class^="product_link"]`;
+      const res = await page.$(targetSelector);
+      if (res) {
+        await page.click(targetSelector);
+        return true;
+      }
+      return false;
+    },
   },
 };
 

@@ -146,116 +146,116 @@ const main = async () => {
 };
 
 const test = async () => {
+  // await macroRun({
+  //   keyword: "여성청결제",
+  //   mid: "8439983476",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-mid",
+  //   macroName: "naver-shopping-find-url-and-directlink-mobile",
+  //   networkRefreshCount: 10,
+  //   waitTimeList: [
+  //     [500, 501],
+  //     [500, 501],
+  //     [5000, 5001],
+  //     [2000, 2001],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //   ],
+  //   scrollTimeList: [
+  //     [25, 250, 250, 251],
+  //     [25, 250, 250, 251],
+  //     [25, 250, 250, 251],
+  //   ],
+  // } as any);
+  // await macroRun({
+  //   keyword: "여성청결제",
+  //   mid: "8439983476",
+  //   compareMid: "9240048684",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-mid",
+  //   macroName: "naver-shopping-compare-pc",
+  //   networkRefreshCount: 10,
+  // } as any);
+  // await macroRun({
+  //   keyword: "여성청결제",
+  //   mid: "8439983476",
+  //   compareMid: "9240048684",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-mid",
+  //   macroName: "naver-shopping-compare-pc",
+  //   networkRefreshCount: 10,
+  //   waitTimeList: [
+  //     [500, 501],
+  //     [500, 501],
+  //     [5000, 5001],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //   ],
+  //   scrollTimeList: [
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //   ],
+  // } as any);
   await macroRun({
-    keyword: "여성청결제",
-    mid: "8439983476",
+    keyword: "방이동 마사지 파라나타이 방이",
+    mid: "1927900507",
+    // compareMid: "9240048684",
     browserPath:
       "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     startWaitSecStart: 3,
     startWaitSecEnd: 5,
     scrollCount: 5,
-    macroMessageKey: "naver-shopping-mid",
-    macroName: "naver-shopping-find-url-and-directlink-mobile",
+    macroMessageKey: "naver-place-pc",
+    macroName: "naver-place-mobile",
     networkRefreshCount: 10,
     waitTimeList: [
       [500, 501],
       [500, 501],
       [5000, 5001],
-      [2000, 2001],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
+      [10000, 11000],
+      [10000, 11000],
+      [5000, 5010],
     ],
     scrollTimeList: [
-      [25, 250, 250, 251],
-      [25, 250, 250, 251],
-      [25, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
     ],
   } as any);
-  // await macroRun({
-  //   keyword: "여성청결제",
-  //   mid: "8439983476",
-  //   compareMid: "9240048684",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-shopping-mid",
-  //   macroName: "naver-shopping-compare-pc",
-  //   networkRefreshCount: 10,
-  // } as any);
-  // await macroRun({
-  //   keyword: "여성청결제",
-  //   mid: "8439983476",
-  //   compareMid: "9240048684",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-shopping-mid",
-  //   macroName: "naver-shopping-compare-pc",
-  //   networkRefreshCount: 10,
-  //   waitTimeList: [
-  //     [500, 501],
-  //     [500, 501],
-  //     [5000, 5001],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //   ],
-  //   scrollTimeList: [
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //   ],
-  // } as any);
-  // await macroRun({
-  //   keyword: "청와옥",
-  //   mid: "1319831936",
-  //   // compareMid: "9240048684",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-place-pc",
-  //   macroName: "naver-place-mobile",
-  //   networkRefreshCount: 10,
-  //   waitTimeList: [
-  //     [500, 501],
-  //     [500, 501],
-  //     [5000, 5001],
-  //     [10000, 11000],
-  //     [10000, 11000],
-  //     [5000, 5010],
-  //   ],
-  //   scrollTimeList: [
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //   ],
-  // } as any);
 };
 
 if (false) {
-  test();
+  // test();
 } else {
   main();
 }

@@ -26,9 +26,16 @@ const searchKeyword = async (page: Page) => {
 const searchTargetItem: any = async (page: Page) => {
   const waitTimeList = LocalConfig.waitTimeList;
   const scrollTimeList = LocalConfig.scrollTimeList;
-  await page.click(`li[data-cbm-doc-id="${LocalConfig.mid}"] a`);
+  try {
+    await (page as any)
+      .locator(`li[data-cbm-doc-id="${LocalConfig.mid}"] a`)
+      .click();
+  } catch (e) {
+    const selector = `[data-loc_plc-doc-id="${LocalConfig.mid}"] .ouxiq > a`;
+    await page.locator(selector).click();
+  }
+
   await utils.sleep(utils.getRandomSecTuple(LocalConfig.waitTimeList[2]));
-  await utils.sleep(utils.getRandomSecTuple(waitTimeList[4])); // 4 : 리뷰 클릭 후 대기 시간 ( 10000)
   // 0, 리뷰 스크롤
   for await (let i of Array(scrollTimeList[0][0]).keys()) {
     await page.mouse.wheel({ deltaY: scrollTimeList[0][1] * i });

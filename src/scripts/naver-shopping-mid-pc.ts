@@ -38,10 +38,9 @@ const searchTargetItem: any = async (
     return null;
   }
   console.log("before click");
-  const res = await page.$(`a[data-i="${config.SEARCH_MID}"]`);
-  console.log("res : ", res);
-  if (res) {
-    await page.click(`a[data-i="${config.SEARCH_MID}"]`);
+  if (
+    await NaverMacroUtil.pc.clickShoppingTargetItem(page, config.SEARCH_MID)
+  ) {
     pageNum = 1;
     return page;
   }

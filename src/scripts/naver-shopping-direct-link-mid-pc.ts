@@ -81,14 +81,10 @@ const searchTargetItem: any = async (
     return null;
   }
   console.log("before click");
-  const res = await page.$(`a[data-i="${mid}"]`);
-  console.log("res : ", res);
-  if (res) {
-    await page.click(`a[data-i="${mid}"]`);
+  if (await NaverMacroUtil.pc.clickShoppingTargetItem(page, String(mid))) {
     pageNum = 1;
     return page;
   }
-
   await utils.sleep(utils.getRandomSecTuple(waitTimeList[3])); // 3 : 상품 검색 실패 후 대기
   if (jumpList.length > 0 && jumpIndex < jumpList.length) {
     pageNum = parseInt(jumpList[jumpIndex]);

@@ -38,7 +38,9 @@ const searchTargetItem: any = async (
     return null;
   }
   console.log("before click");
-  const res = await page.$(`a[data-i="${config.SEARCH_MID}"]`);
+
+  const targetSelector = `a[data-i="${config.SEARCH_MID}"]:not([class^="ad"]):not([class^="thumb"])[class^="product_link"]`;
+  const res = await page.$(targetSelector);
   console.log("res : ", res);
   if (res) {
     // get href
@@ -109,7 +111,6 @@ export const process = async (localConfig: NaverShippingMidConfig) => {
   config.SEARCH_KEYWORD = localConfig.keyword;
   config.SEARCH_MID = localConfig.mid;
   const waitTimeList = localConfig.waitTimeList;
-  const startTimeMs = performance.now() / 1000;
   if (localConfig.jumpPage) {
     jumpList = localConfig.jumpPage.split("_");
     jumpIndex = 0;
