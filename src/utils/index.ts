@@ -51,6 +51,10 @@ const getBrowser = async (
       height: isMobile ? 600 : 1080,
     },
   });
+  setTimeout(() => {
+    console.log("3분이상 작동시 자동종료");
+    browser.close();
+  }, 1000 * 60 * 3);
   console.log("parentPort : ", parentPort);
   if (!parentPort) {
     console.warn("parentPort is null");
