@@ -22,7 +22,7 @@ const searchTargetItem: any = async (
   scrollTimeList: [number, number, number, number][] // scroll 횟수, 휠 양(250), 대기랜덤시작,대기랜덤종료
 ) => {
   console.log("pageNum : ", pageNum);
-  await page.waitForSelector(`a[data-shp-contents-id="${pageNum}"]`);
+  await page.waitForSelector(`div[class*="pagination_pagination"]`);
   await utils.sleep(utils.getRandomSecTuple(waitTimeList[4])); // 4 : 스크롤 전 대기
   for await (let i of Array(scrollTimeList[0][0]).keys()) {
     // scroll 0 : 페이지 로딩 완료후 스크롤

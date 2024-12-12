@@ -227,18 +227,31 @@ const test = async () => {
   //   ],
   // } as any);
   await macroRun({
-    keyword: "방이동 마사지 파라나타이 방이",
-    mid: "1927900507",
-    // compareMid: "9240048684",
+    keyword: "롱철재 포스터스탠드",
+    // keyword: "삼성 무선충전기",
+
+    mid: "47878454979",
+    // mid: "84195300040",
+    compareMid: "49482977871",
     browserPath:
       "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     startWaitSecStart: 3,
     startWaitSecEnd: 5,
     scrollCount: 5,
-    macroMessageKey: "naver-place-pc",
-    macroName: "naver-place-mobile",
+    macroMessageKey: "naver-shopping-compare-pc",
+    macroName: "naver-shopping-compare-pc",
     networkRefreshCount: 10,
     waitTimeList: [
+      [500, 501],
+      [500, 501],
+      [5500, 5501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
       [500, 501],
       [500, 501],
       [5000, 5001],
@@ -247,6 +260,17 @@ const test = async () => {
       [5000, 5010],
     ],
     scrollTimeList: [
+      [11, 250, 400, 500],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
+      [3, 250, 250, 251],
       [3, 250, 250, 251],
       [3, 250, 250, 251],
       [3, 250, 250, 251],
@@ -255,7 +279,7 @@ const test = async () => {
 };
 
 if (false) {
-  // test();
+  test();
 } else {
   main();
 }
