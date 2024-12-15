@@ -16,6 +16,7 @@ import { process as NaverShoppingFindUrlAndDirectlinkPc } from "./scripts/naver-
 import { process as NaverShoppingFindUrlAndDirectlinkMobile } from "./scripts/naver-shopping-find-url-and-directlink-mobile";
 // import { process as NaverShoppingCompareMobile } from "./scripts/naver-shopping-compare-mobile";
 import { process as NaverShoppingComparePc } from "./scripts/naver-shopping-compare-pc";
+import { process as CoupangNormal } from "./scripts/coupang-normal";
 
 import ProxySetter from "./utils/proxy";
 import { parentPort, workerData } from "worker_threads";
@@ -43,7 +44,8 @@ export type Config = {
     | "naver-shopping-find-url-and-directlink-pc"
     | "naver-shopping-find-url-and-directlink-mobile"
     | "naver-shopping-direct-link-mid-pc"
-    | "naver-shopping-direct-link-mid-mobile";
+    | "naver-shopping-direct-link-mid-mobile"
+    | "coupang-normal";
   browserPath: string;
   isView: boolean;
   networkRefreshCount: number;
@@ -121,6 +123,9 @@ export const macroRun = async (config: Config) => {
         break;
       case "naver-shopping-find-url-and-directlink-mobile":
         await NaverShoppingFindUrlAndDirectlinkMobile(config as any);
+        break;
+      case "coupang-normal":
+        await CoupangNormal(config as any);
         break;
       default:
         console.log("config macroName 없음 : ", config.macroName);
@@ -227,19 +232,20 @@ const test = async () => {
   //   ],
   // } as any);
   await macroRun({
-    keyword: "롱철재 포스터스탠드",
+    keyword: "레트로 게임기",
+    // keyword: "드림어워드 골프트로피",
     // keyword: "삼성 무선충전기",
 
-    mid: "47878454979",
+    mid: "18747806050",
     // mid: "84195300040",
-    compareMid: "49482977871",
+    compareMid: "87026070117",
     browserPath:
       "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     startWaitSecStart: 3,
     startWaitSecEnd: 5,
     scrollCount: 5,
     macroMessageKey: "naver-shopping-compare-pc",
-    macroName: "naver-shopping-compare-pc",
+    macroName: "coupang-normal",
     networkRefreshCount: 10,
     waitTimeList: [
       [500, 501],
@@ -278,7 +284,7 @@ const test = async () => {
   } as any);
 };
 
-if (false) {
+if (true) {
   test();
 } else {
   main();

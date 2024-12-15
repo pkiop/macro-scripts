@@ -48,7 +48,7 @@ const getBrowser = async (
     args,
     defaultViewport: {
       width: isMobile ? 400 : 1920,
-      height: isMobile ? 600 : 1080,
+      height: isMobile ? 800 : 1080,
     },
   });
   setTimeout(() => {
