@@ -1,4 +1,4 @@
-import { Page } from "puppeteer-core";
+import { Page } from "puppeteer";
 import utils from ".";
 
 const scroll = async (page: Page, scrollCount: number) => {

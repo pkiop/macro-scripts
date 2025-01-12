@@ -1,4 +1,4 @@
-import { Page } from "puppeteer-core";
+import { Page } from "puppeteer";
 import { Config } from "..";
 import utils from "../utils";
 
@@ -10,19 +10,17 @@ type CoupangNormalConfig = {
 export const process = async (localConfig: CoupangNormalConfig) => {
   console.log("direct link process start");
   console.log("localConfig : ", localConfig);
-  const browser = await utils.getBrowser(localConfig, true);
+  const browser = await utils.getBrowser(localConfig);
   try {
     const keyword = localConfig.keyword;
     const mid = localConfig.mid;
     const maxPage = 20;
     let page = (await browser.pages())[0] as Page;
 
-    await page.setUserAgent(
-      "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-    );
-
     await utils.sleep(500);
-    await page.goto("https://m.coupang.com", { waitUntil: "domcontentloaded" });
+    await page.goto("https://www.coupang.com", {
+      waitUntil: "domcontentloaded",
+    });
     await utils.sleep(1000);
 
     try {
@@ -64,13 +62,20 @@ export const process = async (localConfig: CoupangNormalConfig) => {
     //   console.log("No more banners to close.");
     // }
 
-    // Click search button
-    await page.click("#searchBtn");
-    await utils.sleep(500);
-
     // Type keyword and search
-    await page.type("#q", keyword, { delay: 100 });
-    await page.keyboard.press("Enter");
+    await page.type("#headerSearchKeyword", keyword, { delay: 100 });
+    await utils.sleep(500);
+    try {
+      await page.goto(
+        `https://www.coupang.com/np/search?component=&q=${keyword}&channel=user`
+      );
+    } catch (e) {
+      await page.goto(
+        `https://www.coupang.com/np/search?component=&q=${keyword}&channel=user`
+      );
+    }
+
+    // await page.click("#headerSearchBtn");
     await utils.sleep(5000);
 
     let cloc = -1;

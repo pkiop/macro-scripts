@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer-core";
+import puppeteer from "puppeteer";
 import { parentPort } from "worker_threads";
 
 import * as proxyChain from "proxy-chain";
@@ -44,6 +44,7 @@ const getBrowser = async (
     //  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     //executablePath:
     // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    browser: "firefox",
     headless: false,
     args,
     defaultViewport: {

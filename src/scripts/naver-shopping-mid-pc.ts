@@ -1,5 +1,5 @@
-import puppeteer from "puppeteer-core";
-import { Page } from "puppeteer-core";
+import puppeteer from "puppeteer";
+import { Page } from "puppeteer";
 import config from "../config";
 import utils from "../utils";
 import { Config } from "..";

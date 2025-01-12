@@ -1,9 +1,6 @@
 import { process as naverShoppingMidPcProcess } from "./scripts/naver-shopping-mid-pc";
 import { process as naverShoppingMidMobileProcess } from "./scripts/naver-shopping-mid-mobile";
-import { process as naverShoppingCompareProcess } from "./scripts/naver-shopping-compare-pc";
 import { process as directLinkProcess } from "./scripts/direct-link";
-import { process as naverWebsiteProcess } from "./scripts/naver-website";
-import { process as naverWebsiteJustSearchProcess } from "./scripts/naver-website-just-search";
 import { process as NaverPlaceMobileProcess } from "./scripts/naver-place-mobile";
 import { process as NaverPlacePcProcess } from "./scripts/naver-place-pc";
 import { process as NaverShoppingMidNoClickShoppingMoreClickMobile } from "./scripts/naver-shopping-mid-no-click-shopping-more-mobile";
@@ -16,7 +13,8 @@ import { process as NaverShoppingFindUrlAndDirectlinkPc } from "./scripts/naver-
 import { process as NaverShoppingFindUrlAndDirectlinkMobile } from "./scripts/naver-shopping-find-url-and-directlink-mobile";
 // import { process as NaverShoppingCompareMobile } from "./scripts/naver-shopping-compare-mobile";
 import { process as NaverShoppingComparePc } from "./scripts/naver-shopping-compare-pc";
-import { process as CoupangNormal } from "./scripts/coupang-normal";
+import { process as CoupangNormalMobile } from "./scripts/coupang-normal-mobile";
+import { process as CoupangNormalPc } from "./scripts/coupang-normal-pc";
 
 import ProxySetter from "./utils/proxy";
 import { parentPort, workerData } from "worker_threads";
@@ -45,7 +43,8 @@ export type Config = {
     | "naver-shopping-find-url-and-directlink-mobile"
     | "naver-shopping-direct-link-mid-pc"
     | "naver-shopping-direct-link-mid-mobile"
-    | "coupang-normal";
+    | "coupang-normal-mobile"
+    | "coupang-normal-pc";
   browserPath: string;
   isView: boolean;
   networkRefreshCount: number;
@@ -124,8 +123,11 @@ export const macroRun = async (config: Config) => {
       case "naver-shopping-find-url-and-directlink-mobile":
         await NaverShoppingFindUrlAndDirectlinkMobile(config as any);
         break;
-      case "coupang-normal":
-        await CoupangNormal(config as any);
+      case "coupang-normal-mobile":
+        await CoupangNormalMobile(config as any);
+        break;
+      case "coupang-normal-pc":
+        await CoupangNormalPc(config as any);
         break;
       default:
         console.log("config macroName 없음 : ", config.macroName);
@@ -240,12 +242,13 @@ const test = async () => {
     // mid: "84195300040",
     compareMid: "87026070117",
     browserPath:
-      "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      // "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "C:\\\\Program Files\\Mozilla Firefox\\firefox.exe",
     startWaitSecStart: 3,
     startWaitSecEnd: 5,
     scrollCount: 5,
     macroMessageKey: "naver-shopping-compare-pc",
-    macroName: "coupang-normal",
+    macroName: "naver-shopping-compare-pc",
     networkRefreshCount: 10,
     waitTimeList: [
       [500, 501],
