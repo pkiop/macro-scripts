@@ -1,7 +1,7 @@
 {
   "name": "macro-core",
   "productName": "macro",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "logic",
   "main": ".vite/build/main.js",
   "scripts": {

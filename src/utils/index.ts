@@ -44,7 +44,7 @@ const getBrowser = async (
     //  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     //executablePath:
     // "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    browser: "firefox",
+    browser: "chrome",
     headless: false,
     args,
     defaultViewport: {

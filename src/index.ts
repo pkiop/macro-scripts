@@ -3,6 +3,7 @@ import { process as naverShoppingMidMobileProcess } from "./scripts/naver-shoppi
 import { process as directLinkProcess } from "./scripts/direct-link";
 import { process as NaverPlaceMobileProcess } from "./scripts/naver-place-mobile";
 import { process as NaverPlacePcProcess } from "./scripts/naver-place-pc";
+import { process as NaverPlusstoreMidKeyword } from "./scripts/naver-plusstore-mid-keyword-pc";
 import { process as NaverShoppingMidNoClickShoppingMoreClickMobile } from "./scripts/naver-shopping-mid-no-click-shopping-more-mobile";
 import { process as NaverShoppingMidNoClickShoppingMoreClickPc } from "./scripts/naver-shopping-mid-no-click-shopping-more-pc";
 import { process as NaverShoppingMidMobileUsingTab } from "./scripts/naver-shopping-mid-mobile-using-tab";
@@ -35,6 +36,7 @@ export type Config = {
     | "naver-website-just-search"
     | "naver-place-mobile"
     | "naver-place-pc"
+    | "naver-plusstore-mid-keyword"
     | "naver-shopping-mid-mobile-using-tab"
     | "naver-shopping-mid-pc-using-tab"
     | "naver-shopping-mid-no-click-shopping-more-mobile"
@@ -114,6 +116,9 @@ export const macroRun = async (config: Config) => {
       case "naver-place-pc":
         await NaverPlacePcProcess(config as any);
         break;
+      case "naver-plusstore-mid-keyword":
+        await NaverPlusstoreMidKeyword(config as any);
+        break;
       case "naver-place-mobile":
         await NaverPlaceMobileProcess(config as any);
         break;
@@ -153,138 +158,138 @@ const main = async () => {
 };
 
 const test = async () => {
-  // await macroRun({
-  //   keyword: "여성청결제",
-  //   mid: "8439983476",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-shopping-mid",
-  //   macroName: "naver-shopping-find-url-and-directlink-mobile",
-  //   networkRefreshCount: 10,
-  //   waitTimeList: [
-  //     [500, 501],
-  //     [500, 501],
-  //     [5000, 5001],
-  //     [2000, 2001],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //   ],
-  //   scrollTimeList: [
-  //     [25, 250, 250, 251],
-  //     [25, 250, 250, 251],
-  //     [25, 250, 250, 251],
-  //   ],
-  // } as any);
-  // await macroRun({
-  //   keyword: "여성청결제",
-  //   mid: "8439983476",
-  //   compareMid: "9240048684",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-shopping-mid",
-  //   macroName: "naver-shopping-compare-pc",
-  //   networkRefreshCount: 10,
-  // } as any);
-  // await macroRun({
-  //   keyword: "여성청결제",
-  //   mid: "8439983476",
-  //   compareMid: "9240048684",
-  //   browserPath:
-  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  //   startWaitSecStart: 3,
-  //   startWaitSecEnd: 5,
-  //   scrollCount: 5,
-  //   macroMessageKey: "naver-shopping-mid",
-  //   macroName: "naver-shopping-compare-pc",
-  //   networkRefreshCount: 10,
-  //   waitTimeList: [
-  //     [500, 501],
-  //     [500, 501],
-  //     [5000, 5001],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //     [500, 501],
-  //   ],
-  //   scrollTimeList: [
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //     [3, 250, 250, 251],
-  //   ],
-  // } as any);
   await macroRun({
-    keyword: "레트로 게임기",
-    // keyword: "드림어워드 골프트로피",
-    // keyword: "삼성 무선충전기",
-
-    mid: "18747806050",
-    // mid: "84195300040",
-    compareMid: "87026070117",
+    keyword: "갤럭시폴드6 케이스",
+    mid: "88076210145",
     browserPath:
-      // "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-      "C:\\\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     startWaitSecStart: 3,
     startWaitSecEnd: 5,
     scrollCount: 5,
-    macroMessageKey: "naver-shopping-compare-pc",
-    macroName: "naver-shopping-compare-pc",
+    macroMessageKey: "naver-plusstore-mid-keyword",
+    macroName: "naver-plusstore-mid-keyword",
     networkRefreshCount: 10,
     waitTimeList: [
       [500, 501],
       [500, 501],
-      [5500, 5501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
-      [500, 501],
       [5000, 5001],
-      [10000, 11000],
-      [10000, 11000],
-      [5000, 5010],
+      [2000, 2001],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
+      [500, 501],
     ],
     scrollTimeList: [
-      [11, 250, 400, 500],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
-      [3, 250, 250, 251],
+      [25, 250, 250, 251],
+      [25, 250, 250, 251],
+      [25, 250, 250, 251],
     ],
   } as any);
+  // await macroRun({
+  //   keyword: "여성청결제",
+  //   mid: "8439983476",
+  //   compareMid: "9240048684",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-mid",
+  //   macroName: "naver-shopping-compare-pc",
+  //   networkRefreshCount: 10,
+  // } as any);
+  // await macroRun({
+  //   keyword: "여성청결제",
+  //   mid: "8439983476",
+  //   compareMid: "9240048684",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-mid",
+  //   macroName: "naver-shopping-compare-pc",
+  //   networkRefreshCount: 10,
+  //   waitTimeList: [
+  //     [500, 501],
+  //     [500, 501],
+  //     [5000, 5001],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //   ],
+  //   scrollTimeList: [
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //   ],
+  // } as any);
+  // await macroRun({
+  //   keyword: "레트로 게임기",
+  //   // keyword: "드림어워드 골프트로피",
+  //   // keyword: "삼성 무선충전기",
+
+  //   mid: "18747806050",
+  //   // mid: "84195300040",
+  //   compareMid: "87026070117",
+  //   browserPath:
+  //     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  //     // "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+  //   startWaitSecStart: 3,
+  //   startWaitSecEnd: 5,
+  //   scrollCount: 5,
+  //   macroMessageKey: "naver-shopping-compare-pc",
+  //   macroName: "naver-shopping-compare-pc",
+  //   networkRefreshCount: 10,
+  //   waitTimeList: [
+  //     [500, 501],
+  //     [500, 501],
+  //     [5500, 5501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [500, 501],
+  //     [5000, 5001],
+  //     [10000, 11000],
+  //     [10000, 11000],
+  //     [5000, 5010],
+  //   ],
+  //   scrollTimeList: [
+  //     [11, 250, 400, 500],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //     [3, 250, 250, 251],
+  //   ],
+  // } as any);
 };
 
 if (true) {

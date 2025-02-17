@@ -92,6 +92,15 @@ const NaverMacroUtil = {
       }
       return false;
     },
+    clickPlusStoreTargetItem: async (page: Page, mid: string) => {
+      const targetSelector = `a[data-shp-contents-id="${mid}"]:not([class^="ad"])`;
+      const res = await page.$(targetSelector);
+      if (res) {
+        await page.click(targetSelector);
+        return true;
+      }
+      return false;
+    },
   },
 };
 
